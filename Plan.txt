@@ -1,0 +1,19 @@
+Great choices! Let me think through this carefully given the role (Nao Medical - Full Stack Developer, AI-native).FastAPI is the better choice here. Nao Medical is an AI-forward company — FastAPI is Python-native, pairs perfectly with AI/ML libraries you already use (LangChain, etc.), and is faster to ship than Spring Boot for this scope. Here's the full plan:
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0.25s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+VvisualizeVvisualize show_widgetHere's the complete plan:
+Stack rationale — FastAPI because Nao Medical is AI-native, FastAPI is Pythonic, async-ready, and auto-generates OpenAPI docs. MongoDB because it's your strongest DB and stores rich-text JSON naturally.
+The 5 things and how to approach each:
+1. Editor (Tiptap) — Use Tiptap (React rich-text editor). It's the best open-source Google Docs-like editor. Gives you bold, italic, underline, headings, bullet/numbered lists out of the box with minimal code. Store content as JSON in MongoDB.
+2. Persistence — MongoDB with two collections: documents (id, title, content, owner_id, created_at, updated_at) and shares (doc_id, shared_with_user_id). Use Motor (async MongoDB driver for FastAPI).
+3. Auth / Users — Seed 3 users (Alice, Bob, Charlie) in MongoDB on startup. A simple /login endpoint returns a mock JWT. No passwords needed — just pick a username from a dropdown.
+4. Sharing — POST /documents/{id}/share with a user_id body. Frontend shows "My Documents" vs "Shared with me" tabs clearly.
+5. File Upload — Accept .txt and .md only (state this clearly in UI). Parse the file content server-side and create a new document from it.
+Folder structure:
+/backend   → FastAPI app (main.py, routes/, models/)
+/frontend  → React + Vite (src/components/, src/pages/)
+README.md, ARCHITECTURE.md, AI_WORKFLOW.md, SUBMISSION.md
