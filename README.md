@@ -2,7 +2,9 @@
 
 A lightweight collaborative document editor built for the Nao Medical Full Stack Developer assignment.
 
----
+## Resource         ## Link
+Walkthrough Video    https://www.loom.com/share/3f227f894f0247f0bbde4059854dfca8
+Google Drive         https://drive.google.com/drive/folders/15ghsrYIJyI9btJV7OIDg7Lhtsk3MaoSI?usp=sharing
 
 ## Tech Stack
 
