@@ -205,6 +205,9 @@ export default function DashboardPage() {
                   fontSize: '14px',
                   fontWeight: activeTab === tab ? 600 : 400,
                   color: activeTab === tab ? 'var(--color-accent)' : 'var(--color-text-secondary)',
+                  borderTop: 'none',
+                  borderLeft: 'none',
+                  borderRight: 'none',
                   borderBottom: activeTab === tab ? '2px solid var(--color-accent)' : '2px solid transparent',
                   marginBottom: '-1px',
                   transition: 'all var(--transition)',
@@ -214,7 +217,6 @@ export default function DashboardPage() {
                   cursor: 'pointer',
                   backgroundColor: 'transparent',
                   border: 'none',
-                  borderBottom: activeTab === tab ? '2px solid var(--color-accent)' : '2px solid transparent',
                 }}
               >
                 {tab}

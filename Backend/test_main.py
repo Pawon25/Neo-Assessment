@@ -192,7 +192,7 @@ async def test_delete_document(client, alice_token):
     delete = await client.delete(f"/documents/{doc_id}", headers=auth(alice_token))
     assert delete.status_code == 204
 
-    get = await client.get(f"/documents/:{doc_id}", headers=auth(alice_token))
+    get = await client.get(f"/documents/{doc_id}", headers=auth(alice_token))
     assert get.status_code == 404
 
 
@@ -259,7 +259,7 @@ async def test_unshared_user_cannot_access_document(client, alice_token, bob_tok
     )
     doc_id = create.json()["id"]
 
-    resp = await client.get(f"/documents/:{doc_id}", headers=auth(bob_token))
+    resp = await client.get(f"/documents/{doc_id}", headers=auth(bob_token))
     assert resp.status_code == 403 or resp.status_code == 404
 
 

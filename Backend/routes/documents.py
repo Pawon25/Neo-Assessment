@@ -139,7 +139,7 @@ async def list_documents(current_user: UserPublic = Depends(get_current_user)):
     return [await enrich(doc, current_user.id, db) for doc in all_docs]
 
 
-@router.get("/:id", response_model=DocumentResponse)
+@router.get("/{id}", response_model=DocumentResponse)
 async def get_document(
     id: str,
     current_user: UserPublic = Depends(get_current_user),

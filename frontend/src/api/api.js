@@ -35,7 +35,7 @@ export const authAPI = {
 // ── Documents ─────────────────────────────────────────────────────────────────
 export const docsAPI = {
   list:        ()                => api.get('/documents'),
-  get:         (id)              => api.get(`/documents/:${id}`),
+  get:         (id)              => api.get(`/documents/${id}`),
   create:      (title)           => api.post('/documents', { title }),
   rename:      (id, title)       => api.patch(`/documents/${id}/rename`, { title }),
   saveContent: (id, content)     => api.put(`/documents/${id}/content`, { content }),
